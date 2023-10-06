@@ -5,14 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-image: url('assets/example.png');
             background-size: cover;
+            display: none; /* Initially hide the body content */
         }
     </style>
+    <script>
+        function startDemi() {
+            document.body.style.display = 'block'; // Show the body content
+            document.getElementById('audio').play(); // Start playing the audio
+            document.getElementById('image').style.display = 'block'; // Show the image
+        }
+    </script>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="example.png" type="assets/example.mp3">
+    <audio id="audio" loop>
+        <source src="assets/Recording.mp3" type="audio/mp3">
     </audio>
+    
+    <img id="image" src="assets/Screenshot_2023-09-04_232218.png" style="display:none;">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var userInput = prompt("Please enter 'demi' to start.");
+            if (userInput === 'demi') {
+                startDemi();
+            }
+        });
+    </script>
 </body>
 </html>
