@@ -15,11 +15,18 @@
             document.getElementById('audio').play();
             document.getElementById('image').style.display = 'block';
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', startDemi);
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'd' || event.key === 'e' || event.key === 'm' || event.key === 'i') {
+                    startDemi();
+                }
+            });
+        });
     </script>
 </head>
 <body>
-    <button onclick="startDemi()">Click to Start</button>
-
     <audio id="audio" loop>
         <source src="assets/Recording.mp3" type="audio/mp3">
     </audio>
@@ -27,5 +34,3 @@
     <img id="image" src="assets/Screenshot_2023-09-04_232218.png" style="display:none;">
 </body>
 </html>
-
-
